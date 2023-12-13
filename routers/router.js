@@ -3,15 +3,15 @@ let router = express.Router();
 let controller = require('../controllers/controller');
 
 router.post('/', function(req,res){
-    controller.postDog(req,res);
+    controller.postCar(req,res);
 });
 
 router.get('/', (req,res)=>{
-    controller.getAllDogs(req,res);
+    controller.getAllCars(req,res);
 });
 
 router.delete('/', (req,res)=>{
-    controller.getAllDogs(req,res);
+    controller.getAllCars(req,res);
 });
 
 

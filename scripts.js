@@ -20,25 +20,25 @@ const formSumitted = () => {
     formData.description = $('#description').val();
 
     console.log(formData);
-    postDog(formData);
+    postCar(formData);
 }
 
-function postDog(dog) {
+function postCar(car) {
     $.ajax({
-        url:'/api/dog',
+        url:'/api/car',
         type:'POST',
-        data:dog,
+        data:car,
         success: (result) => {
             if (result.statusCode === 201) {
-                alert('dog posted');
+                alert('cars posted');
                 location.reload();
             }
         }
     });
 }
 
-function getAllDogs() {
-    $.get('/api/dog',(result)=>{
+function getAllCars() {
+    $.get('/api/car',(result)=>{
         if (result.statusCode === 200) {
             addCards(result.data);
         }
@@ -56,6 +56,6 @@ $(document).ready(function(){
         formSumitted();
     });
     $('.modal').modal();
-    getAllDogs();
+    getAllCars();
     console.log('ready');
 });

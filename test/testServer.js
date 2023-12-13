@@ -1,6 +1,6 @@
 const { expect } = require("chai");
 const request = require("request");
-let url = 'http://localhost:3000/api/dog';
+let url = 'http://localhost:3000/api/car';
 let dog = {paht:'',title:''}
 
 
@@ -15,7 +15,7 @@ describe('test GET api', function(){
 });
 
 describe('test POST api', function(){
-    it('post dog to DB', function(done){
+    it('post car to DB', function(done){
         request.post({url:url,form:dog}, function(a,b,c){
             //todo asserts here
             done();
@@ -24,7 +24,7 @@ describe('test POST api', function(){
 });
 
 describe('test DELETE api', function(){
-    it('delete a dog', function(done){
+    it('delete a car', function(done){
         request.delete({url:url,form:dog}, function(a,b,c){
             //todo asserts here
             done();

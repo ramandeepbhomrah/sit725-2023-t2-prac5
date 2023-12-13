@@ -1,29 +1,29 @@
-let collection = require('../models/dog');
+let collection = require('../models/car');
 
-const postDog = (req,res) => {
-    let dog = req.body;
-    collection.postDog(dog, (err,result) => {
+const postCar = (req,res) => {
+    let car = req.body;
+    collection.postCar(car, (err,result) => {
         if (!err) {
             res.json({statusCode:201,data:result,message:'success'});
         }
     });
 }
 
-const getAllDogs = (req,res) => {
-    collection.getAllDogs((error,result)=>{
+const getAllCars = (req,res) => {
+    collection.getAllCars((error,result)=>{
         if (!error) {
             res.json({statusCode:200,data:result,message:'success'});
         }
     });
 }
 
-const deleteDog = (req,res) => {
-    let dog = req.body;
-    collection.deleteOne(dog, (err,result) => {
+const deleteCar = (req,res) => {
+    let car = req.body;
+    collection.deleteOne(car, (err,result) => {
         if (!err) {
             res.json({statusCode:201,data:result,message:'success'});
         }
     });
 }
 
-module.exports = {postDog,getAllDogs}
+module.exports = {postCar,getAllCars}
