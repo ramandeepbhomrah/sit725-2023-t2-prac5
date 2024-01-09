@@ -19,7 +19,9 @@ io.on('connection',(socket)=>{
     });
 
     setInterval(()=>{
-        socket.emit('number', parseInt(Math.random()*10));
+        x=parseInt(Math.random()*10);
+        socket.emit('number', x);
+        console.log('Emmiting Number '+x);
     }, 1000)
 });
 
